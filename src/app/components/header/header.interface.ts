@@ -4,10 +4,7 @@ export interface INavItems {
   link: string;
 }
 
-export interface INavSocialLinks {
-  id: number;
-  name: string;
+export interface INavSocialLinks extends INavItems {
   alt: string;
   src: string;
-  link: string;
 }

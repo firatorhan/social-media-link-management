@@ -8,7 +8,8 @@ module.exports = {
     colors: {
       'rast-purple': '#744BFC',
       'rast-soft-purple': '#EFF2FF',
-      'white': '#FFF'
+      'white': '#FFF',
+      'soft-gray': '#EAEAEA'
      
     },
   },

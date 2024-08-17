@@ -1,1 +1,24 @@
-<p>list-link works!</p>
+<div class="">
+  <table class="w-full">
+    <thead>
+      <tr class="bg-white h-16 rounded-xl border border-soft-gray">
+        <th class="text-start p-8 font-semibold rounded-tl-lg">
+          Social Media Link
+        </th>
+        <th class="text-start font-semibold">Name of Social Media</th>
+        <th class="text-start rounded-tr-lg font-semibold">Description</th>
+      </tr>
+    </thead>
+    <tbody class="">
+      <tr
+        *ngFor="let link of listItems; index as i"
+        class="h-16 border border-soft-gray cursor-pointer hover:shadow-inner"
+        [ngClass]="i % 2 === 0 ? 'bg-white' : 'bg-rast-soft-purple'"
+      >
+        <td class="p-8">{{ link.link }}</td>
+        <td>{{ link.nameOfSocialMedia }}</td>
+        <td>{{ link.description }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
