@@ -1,0 +1,7 @@
+<ul class="flex gap-2">
+  <li *ngFor="let logo of socialLinks; index as i">
+    <a [href]="logo.link" target="_blank"
+      ><img class="h-6 w-auto" [src]="logo.src" [alt]="logo.alt"
+    /></a>
+  </li>
+</ul>

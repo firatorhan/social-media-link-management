@@ -5,6 +5,10 @@ module.exports = {
   ],
   theme: {
     extend: {},
+    colors: {
+      'rast-purple': '#744BFC',
+     
+    },
   },
   plugins: [],
 }
