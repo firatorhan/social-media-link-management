@@ -6,49 +6,51 @@
     <app-add-link />
   </div>
   <div>
-    <app-list-link />
+    <app-list-link (editLinkEmitter)="editLink($event)" />
   </div>
 </section>
 <app-modal>
   <div>
     <form
-      [formGroup]="myForm"
+      [formGroup]="linkForm"
       (ngSubmit)="onSubmit()"
       class="flex flex-col gap-6"
     >
       <div class="form-input-group">
-        <label class="text-sm" for="urlLink">Social Media Link</label>
-        <input
-          type="url"
-          id="urlLink"
-          formControlName="urlLink"
-          class="form-input"
-        />
+        <label class="text-sm" for="link">Social Media Link</label>
+        <input type="url" id="link" formControlName="link" class="form-input" />
         <div
-          *ngIf="
-            myForm.get('urlLink')?.invalid && myForm.get('urlLink')?.touched
-          "
+          *ngIf="linkForm.get('link')?.invalid && linkForm.get('link')?.touched"
         >
-          <div *ngIf="myForm.get('urlLink')?.errors?.['required']">
+          <div *ngIf="linkForm.get('link')?.errors?.['required']">
             <span class="text-xs text-error"
               >Social Media Link is required</span
             >
           </div>
-          <div *ngIf="myForm.get('urlLink')?.errors?.['pattern']">
-            <span class="text-xs text-error">Invalid URL format.</span>
+          <div *ngIf="linkForm.get('link')?.errors?.['pattern']">
+            <span class="text-xs text-error"
+              >Invalid URL format. (ex: https://firatorhan.com/)</span
+            >
           </div>
         </div>
       </div>
 
       <div class="form-input-group">
-        <label class="text-sm" for="name">Name of Social Media</label>
+        <label class="text-sm" for="nameOfSocialMedia"
+          >Name of Social Media</label
+        >
         <input
           type="text"
-          id="name"
-          formControlName="name"
+          id="nameOfSocialMedia"
+          formControlName="nameOfSocialMedia"
           class="form-input"
         />
-        <div *ngIf="myForm.get('name')?.invalid && myForm.get('name')?.touched">
+        <div
+          *ngIf="
+            linkForm.get('nameOfSocialMedia')?.invalid &&
+            linkForm.get('nameOfSocialMedia')?.touched
+          "
+        >
           <span class="text-xs text-error"> Name is required.</span>
         </div>
       </div>
@@ -63,8 +65,8 @@
         />
         <div
           *ngIf="
-            myForm.get('description')?.invalid &&
-            myForm.get('description')?.touched
+            linkForm.get('description')?.invalid &&
+            linkForm.get('description')?.touched
           "
         >
           <span class="text-xs text-error">Description is required.</span>
@@ -75,6 +77,7 @@
           <button
             class="bg-rast-soft-purple text-rast-purple rounded-full px-4 py-2 min-w-24"
             type="reset"
+            (click)="hideModal()"
           >
             Cancel
           </button>

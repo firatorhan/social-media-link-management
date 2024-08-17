@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { ILinkItem } from '../main.interface';
 import { CommonModule } from '@angular/common';
+import { DataService } from '../../shared/services/data.service';
 
 @Component({
   selector: 'app-list-link',
@@ -9,39 +10,23 @@ import { CommonModule } from '@angular/common';
   templateUrl: './list-link.component.html',
   styleUrl: './list-link.component.scss',
 })
-export class ListLinkComponent {
-  listItems: ILinkItem[];
+export class ListLinkComponent implements OnInit {
+  listItems: ILinkItem[] = [];
+  @Output() editLinkEmitter: EventEmitter<ILinkItem> =
+    new EventEmitter<ILinkItem>();
 
-  constructor() {
-    this.listItems = [
-      {
-        id: 1,
-        link: 'instagram.com/mobilerast/',
-        nameOfSocialMedia: 'instagram	',
-        description:
-          "We'll help you to finish your development project successfully.",
-      },
-      {
-        id: 2,
-        link: 'tr.linkedin.com/company/rastmobile',
-        nameOfSocialMedia: 'linkedin',
-        description:
-          'Hire vetted developers from Rast Mobile to scale up your tech projects.',
-      },
-      {
-        id: 3,
-        link: 'behance.net/rastmobile',
-        nameOfSocialMedia: 'behance!',
-        description:
-          'Software Development Agency Rast Mobile Information Technology Ltd.',
-      },
-      {
-        id: 4,
-        link: 'twitter.com/rastmobile',
-        nameOfSocialMedia: 'twitter',
-        description:
-          'Software Development Agency Rast Mobile Information Technology Ltd.',
-      },
-    ];
+  constructor(private dataService: DataService) {}
+  ngOnInit(): void {
+    this.dataService.currentData.subscribe((data) => {
+      this.listItems = data;
+    });
+  }
+
+  deleteLink(id: number) {
+    this.dataService.removeData(id);
+  }
+
+  editLink(link: ILinkItem) {
+    this.editLinkEmitter.emit(link);
   }
 }

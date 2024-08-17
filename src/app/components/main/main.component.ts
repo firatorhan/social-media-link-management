@@ -10,6 +10,9 @@ import {
   Validators,
 } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import { DataService } from '../shared/services/data.service';
+import { ModalService } from '../shared/services/modal.service';
+import { ILinkItem } from './main.interface';
 
 @Component({
   selector: 'app-main',
@@ -26,22 +29,43 @@ import { CommonModule } from '@angular/common';
   styleUrl: './main.component.scss',
 })
 export class MainComponent {
-  myForm: FormGroup;
+  linkForm: FormGroup;
+  receivedData: ILinkItem | undefined;
 
-  constructor(private fb: FormBuilder) {
-    this.myForm = this.fb.group({
-      name: ['', Validators.required],
+  constructor(
+    private fb: FormBuilder,
+    private dataService: DataService,
+    private modalService: ModalService
+  ) {
+    this.linkForm = this.fb.group({
+      id: 0,
+      link: ['', [Validators.required, Validators.pattern('https?://.+')]],
+      nameOfSocialMedia: ['', Validators.required],
       description: ['', Validators.required],
-      urlLink: ['', [Validators.required, Validators.pattern('https?://.+')]],
     });
   }
 
   onSubmit() {
-    if (this.myForm.valid) {
-      console.log('Form Data:', this.myForm.value);
-      // Geçerli verileri işleyin, örneğin bir API'ye gönderebilirsiniz.
+    if (this.linkForm.valid) {
+      console.log('Form Data:', this.linkForm.value);
+      this.dataService.addLink(this.linkForm.value);
+      this.linkForm.reset();
+      this.modalService.hide();
     } else {
       console.log('Form geçerli değil.');
     }
   }
+  hideModal() {
+    this.modalService.hide();
+  }
+
+  editLink(data: ILinkItem) {
+    this.receivedData = data;
+    this.dataService.currentData.subscribe((data) => {
+      let selectedItem = data.find((item) => item.id === this.receivedData?.id);
+      this.linkForm.patchValue(selectedItem!);
+      this.modalService.show();
+    });
+  }
+  
 }
