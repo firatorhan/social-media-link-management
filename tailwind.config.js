@@ -7,6 +7,8 @@ module.exports = {
     extend: {},
     colors: {
       'rast-purple': '#744BFC',
+      'rast-soft-purple': '#EFF2FF',
+      'white': '#FFF'
      
     },
   },
