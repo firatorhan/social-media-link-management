@@ -9,7 +9,9 @@ module.exports = {
       'rast-purple': '#744BFC',
       'rast-soft-purple': '#EFF2FF',
       'white': '#FFF',
-      'soft-gray': '#EAEAEA'
+      'black': '#000',
+      'soft-gray': '#EAEAEA',
+      'error': '#D73030'
      
     },
   },

@@ -12,7 +12,7 @@
     <tbody class="">
       <tr
         *ngFor="let link of listItems; index as i"
-        class="h-16 border border-soft-gray cursor-pointer hover:shadow-inner"
+        class="h-16 border border-soft-gray cursor-pointer hover:shadow-inner hover:bg-white"
         [ngClass]="i % 2 === 0 ? 'bg-white' : 'bg-rast-soft-purple'"
       >
         <td class="p-8">{{ link.link }}</td>

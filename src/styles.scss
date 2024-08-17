@@ -2,3 +2,12 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+    .form-input {
+      @apply w-full h-10 border-2 border-soft-gray rounded-full py-2 px-4;
+    }
+    .form-input-group {
+        @apply flex flex-col gap-1;
+    }
+  }

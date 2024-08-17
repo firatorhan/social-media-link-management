@@ -1,0 +1,16 @@
+<div
+  class="fixed top-0 left-0 w-full h-full bg-black/50 flex justify-center items-center align-middle z-50"
+  *ngIf="isVisible"
+>
+  <div
+    class="bg-white p-10 rounded-lg shadow-lg relative max-w-[500px] w-full h-fit"
+  >
+    <button
+      class="absolute top-3 right-3 bg-none border-none cursor-pointer"
+      (click)="close()"
+    >
+      <img src="assets/search-link/close-icon.svg" alt="rast-close-icon" />
+    </button>
+    <ng-content></ng-content>
+  </div>
+</div>
