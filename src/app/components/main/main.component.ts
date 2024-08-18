@@ -31,14 +31,17 @@ import { ILinkItem } from './main.interface';
 export class MainComponent {
   linkForm: FormGroup;
   receivedData: ILinkItem | undefined;
-
+  id = -1;
   constructor(
     private fb: FormBuilder,
     private dataService: DataService,
     private modalService: ModalService
   ) {
+    this.dataService.currentData.subscribe((data) => {
+      return (this.id = data.length);
+    });
     this.linkForm = this.fb.group({
-      id: 0,
+      id: this.id,
       link: ['', [Validators.required, Validators.pattern('https?://.+')]],
       nameOfSocialMedia: ['', Validators.required],
       description: ['', Validators.required],
@@ -47,7 +50,6 @@ export class MainComponent {
 
   onSubmit() {
     if (this.linkForm.valid) {
-      console.log('Form Data:', this.linkForm.value);
       this.dataService.addLink(this.linkForm.value);
       this.linkForm.reset();
       this.modalService.hide();
@@ -67,5 +69,4 @@ export class MainComponent {
       this.modalService.show();
     });
   }
-  
 }

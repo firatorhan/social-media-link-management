@@ -3,6 +3,8 @@
     <input
       type="text"
       placeholder="Search objects..."
+      [(ngModel)]="filterText"
+      (ngModelChange)="onFilterTextChange($event)" 
       class="w-80 py-3 pl-7 pe-14 rounded-full"
     />
 
