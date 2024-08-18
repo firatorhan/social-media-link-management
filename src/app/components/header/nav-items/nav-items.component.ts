@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { INavItems } from '../header.interface';
+import { RouterOutlet, RouterLink, RouterLinkActive } from '@angular/router';
 
 @Component({
   selector: 'app-nav-items',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule ,RouterOutlet, RouterLink, RouterLinkActive],
   templateUrl: './nav-items.component.html',
   styleUrl: './nav-items.component.scss',
 })

@@ -1,5 +1,5 @@
 <ul class="flex gap-14">
   <li *ngFor="let item of navItems; index as i" class="hover:text-rast-purple">
-    <a href="{{item.link}}">{{ item.name }}</a>
+    <a routerLink="{{item.link}}" routerLinkActive="text-rast-purple" >{{ item.name }}</a>
   </li>
 </ul>
