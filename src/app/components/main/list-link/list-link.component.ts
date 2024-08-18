@@ -3,11 +3,12 @@ import { ILinkItem } from '../main.interface';
 import { CommonModule } from '@angular/common';
 import { DataService } from '../../shared/services/data.service';
 import { HighlightDirective } from '../../shared/directives/highlight.directive';
+import { UppercasePipe } from '../../shared/pipes/uppercase.pipe';
 
 @Component({
   selector: 'app-list-link',
   standalone: true,
-  imports: [CommonModule, HighlightDirective],
+  imports: [CommonModule, HighlightDirective, UppercasePipe],
   templateUrl: './list-link.component.html',
   styleUrl: './list-link.component.scss',
 })
