@@ -1,14 +1,15 @@
 <div class="flex gap-4">
-  <div class="relative flex">
+  <div class="relative flex w-full">
     <input
       type="text"
       placeholder="Search objects..."
       [(ngModel)]="filterText"
-      (ngModelChange)="onFilterTextChange($event)" 
-      class="w-80 py-3 pl-7 pe-14 rounded-full"
+      (ngModelChange)="onFilterTextChange($event)"
+      class="w-full lg:w-80  py-3 pl-7 pe-14 rounded-full"
     />
 
-    <button (click)="onFilterTextChange(filterText)"
+    <button
+      (click)="onFilterTextChange(filterText)"
       class="absolute flex justify-center items-center right-0 rounded-e-full bg-rast-purple cursor-pointer h-full px-5"
     >
       <img src="assets/search-link/search-icon.svg" alt="rast-search-icon" />
@@ -16,7 +17,11 @@
   </div>
   <div>
     <button class="bg-white h-full rounded-full px-5 hover:bg-rast-soft-purple">
-      <img src="assets/search-link/filter-icon.svg" alt="rast-filter-icon" />
+      <img
+        class="w-6"
+        src="assets/search-link/filter-icon.svg"
+        alt="rast-filter-icon"
+      />
     </button>
   </div>
 </div>
