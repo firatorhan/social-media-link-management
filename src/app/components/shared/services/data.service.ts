@@ -9,29 +9,29 @@ export class DataService {
   private initialItems = [
     {
       id: 0,
-      link: 'instagram.com/mobilerast/',
+      link: 'https://www.instagram.com/mobilerast/',
       nameOfSocialMedia: 'instagram	',
       description:
         "We'll help you to finish your development project successfully.",
     },
     {
       id: 1,
-      link: 'tr.linkedin.com/company/rastmobile',
+      link: 'https://www.linkedin.com/company/rastmobile/?originalSubdomain=tr',
       nameOfSocialMedia: 'linkedin',
       description:
         'Hire vetted developers from Rast Mobile to scale up your tech projects.',
     },
     {
       id: 2,
-      link: 'behance.net/rastmobile',
+      link: 'https://www.behance.net/rastmobile',
       nameOfSocialMedia: 'behance!',
       description:
         'Software Development Agency Rast Mobile Information Technology Ltd.',
     },
     {
       id: 3,
-      link: 'twitter.com/rastmobile',
-      nameOfSocialMedia: 'twitter',
+      link: 'https://www.youtube.com/channel/UC9zhWu89h4AqolHrVspLkVw',
+      nameOfSocialMedia: 'Youtube',
       description:
         'Software Development Agency Rast Mobile Information Technology Ltd.',
     },

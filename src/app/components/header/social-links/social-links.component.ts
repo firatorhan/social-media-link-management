@@ -19,28 +19,28 @@ export class SocialLinksComponent {
         name: 'Youtube',
         alt: 'rast mobile - youtube logo',
         src: 'assets/social-icons/youtube.svg',
-        link: 'https://www.youtube.com/channel/UC9zhWu89h4AqolHrVspLkVw'
+        link: 'https://www.youtube.com/channel/UC9zhWu89h4AqolHrVspLkVw',
       },
       {
         id: 3,
         name: 'Instagram',
         alt: 'rast mobile - Instagram logo',
         src: 'assets/social-icons/instagram.svg',
-        link: 'https://www.instagram.com/mobilerast/'
+        link: 'https://www.instagram.com/mobilerast/',
       },
       {
         id: 4,
         name: 'Behance',
         alt: 'rast mobile - Behance logo',
         src: 'assets/social-icons/behance.svg',
-        link: 'https://www.behance.net/rastmobile'
+        link: 'https://www.behance.net/rastmobile',
       },
       {
         id: 5,
         name: 'Linkedin',
         alt: 'rast mobile - Linkedin logo',
         src: 'assets/social-icons/linkedin.svg',
-        link: 'https://www.linkedin.com/company/rastmobile/?originalSubdomain=tr'
+        link: 'https://www.linkedin.com/company/rastmobile/?originalSubdomain=tr',
       },
     ];
   }
