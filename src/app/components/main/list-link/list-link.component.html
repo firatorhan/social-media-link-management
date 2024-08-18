@@ -43,16 +43,16 @@
         defaultColor="#744BFC"
         [ngClass]="i % 2 === 0 ? 'bg-white' : 'bg-rast-soft-purple'"
       >
-        <td class="p-8 ">{{ link.link }}</td>
-        <td>{{ link.nameOfSocialMedia | uppercase }}</td>
-        <td>{{ link.description }}</td>
+        <td class="p-8 min-w-64">{{ link.link }}</td>
+        <td class="min-w-64">{{ link.nameOfSocialMedia | uppercase }}</td>
+        <td class="min-w-64">{{ link.description }}</td>
         <td>
-          <button type="button" (click)="editLink(link)">
+          <button type="button" (click)="editLink(link)" class="w-5">
             <img src="assets/link-list/edit-icon.svg" alt="rast-filter-icon" />
           </button>
         </td>
         <td class="p-8">
-          <button type="button" (click)="deleteLink(link.id)">
+          <button type="button" (click)="deleteLink(link.id)" class="w-5">
             <img
               src="assets/link-list/delete-icon.svg"
               alt="rast-filter-icon"

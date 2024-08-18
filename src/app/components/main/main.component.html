@@ -57,12 +57,12 @@
 
       <div class="form-input-group">
         <label class="text-sm" for="description">Description</label>
-        <input
-          type="text"
+
+        <textarea
           id="description"
           formControlName="description"
-          class="form-input"
-        />
+          class="form-input resize-y rounded-md"
+        ></textarea>
         <div
           *ngIf="
             linkForm.get('description')?.invalid &&
