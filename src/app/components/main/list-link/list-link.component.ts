@@ -14,6 +14,9 @@ import { UppercasePipe } from '../../shared/pipes/uppercase.pipe';
 })
 export class ListLinkComponent implements OnInit {
   listItems: ILinkItem[] = [];
+  defaultUrl = true;
+  defaultName = true;
+
   @Output() editLinkEmitter: EventEmitter<ILinkItem> =
     new EventEmitter<ILinkItem>();
 
@@ -31,4 +34,13 @@ export class ListLinkComponent implements OnInit {
   editLink(link: ILinkItem) {
     this.editLinkEmitter.emit(link);
   }
+  sortLinksByUrl(type: 'asc' | 'desc') {
+    this.defaultUrl = !this.defaultUrl
+    this.dataService.sortLinksByUrl(type);
+  }
+  sortLinksByName(type: 'asc' | 'desc') {
+    this.defaultName = !this.defaultName
+    this.dataService.sortLinksByName(type);
+  }
+  
 }

@@ -77,4 +77,24 @@ export class DataService {
     this.dataSource.next(updatedData);
     localStorage.setItem('links', JSON.stringify(updatedData));
   }
+  sortLinksByUrl(type: 'asc' | 'desc') {
+    let currentData = this.dataSource.value;
+
+    if(type === 'asc') {
+      currentData.sort((a:ILinkItem, b:ILinkItem) => a.link.localeCompare(b.link));
+    }else {
+      currentData = JSON.parse(localStorage.getItem('links')!);
+      this.dataSource.next(currentData);
+    }
+  }
+  sortLinksByName(type: 'asc' | 'desc') {
+    let currentData = this.dataSource.value;
+
+    if(type === 'asc') {
+      currentData.sort((a:ILinkItem, b:ILinkItem) => a.nameOfSocialMedia.localeCompare(b.nameOfSocialMedia));
+    }else {
+      currentData = JSON.parse(localStorage.getItem('links')!);
+      this.dataSource.next(currentData);
+    }
+  }
 }
