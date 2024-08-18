@@ -66,7 +66,7 @@ export class DataService {
     const currentData = JSON.parse(localStorage.getItem('links')!);
     this.dataSource.next(currentData);
 
-    const updatedData = currentData.filter((item: any) =>
+    const updatedData = currentData.filter((item: ILinkItem) =>
       item.link.toLowerCase().includes(input.toLowerCase())
     );
     this.dataSource.next(updatedData);

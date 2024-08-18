@@ -1,0 +1,60 @@
+<section
+  class="w-full h-[80vh] flex justify-center align-middle gap-4 rounded-lg px-32 py-20 bg-rast-soft-purple"
+>
+  <div class="h-fit bg-white rounded-lg p-16">
+    <div>
+      <h2 class="text-3xl mb-5 text-rast-purple">Login</h2>
+    </div>
+    <form
+      [formGroup]="loginForm"
+      (ngSubmit)="onSubmit()"
+      class="flex flex-col gap-6"
+    >
+      <div class="form-input-group">
+        <label class="text-sm" for="nameOfSocialMedia">Username</label>
+        <input
+          type="text"
+          id="username"
+          formControlName="username"
+          class="form-input"
+        />
+        <div
+          *ngIf="
+            loginForm.get('username')?.invalid &&
+            loginForm.get('username')?.touched
+          "
+        >
+          <span class="text-xs text-error"> Username is required.</span>
+        </div>
+      </div>
+
+      <div class="form-input-group">
+        <label class="text-sm" for="description">Password</label>
+        <input
+          type="password"
+          id="password"
+          formControlName="password"
+          class="form-input"
+        />
+        <div
+          *ngIf="
+            loginForm.get('password')?.invalid &&
+            loginForm.get('password')?.touched
+          "
+        >
+          <span class="text-xs text-error">Password is required.</span>
+        </div>
+      </div>
+      <div class="flex justify-end">
+        <div class="flex gap-2">
+          <button
+            class="bg-rast-purple text-rast-soft-purple rounded-full px-4 py-2 min-w-24"
+            type="submit"
+          >
+            Save
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
+</section>

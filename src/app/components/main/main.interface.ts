@@ -4,3 +4,9 @@ export interface ILinkItem {
   nameOfSocialMedia: string;
   description: string;
 }
+
+export interface IUserLogin {
+  username: string,
+  password: string
+
+}
