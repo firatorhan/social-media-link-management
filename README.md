@@ -1,27 +1,67 @@
-# SocialMediaLinkManagement
+# Social Media and Link Management Application
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.0.
+This is a dynamic and interactive Angular application that allows users to manage their social media links and associated information, such as the social media platform name and a description of the link.
 
-## Development server
+## Features
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+- **Add New Links:** Users can add new social media links along with the name of the platform and a brief description.
+- **Edit Existing Links:** Users can edit the name, description, and URL of any existing social media link.
+- **Delete Links:** Users can remove any unwanted social media links from the list.
+- **Responsive Design:** The application is fully responsive, ensuring a seamless experience on both desktop and mobile devices.
+- **Search and Filter:** Users can search and filter through the list of social media links for easy management.
+- **Pagination:** The application supports pagination for managing a large number of social media links efficiently.
 
-## Code scaffolding
+## Installation
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+```bash
+git clone https://github.com/firatorhan/social-media-link-management.git
+```
+```bash
+cd social-media-link-management
+```
+```bash
+npm install
+```
 
-## Build
+## Running the Application
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+To start the application locally, run:
 
-## Running unit tests
+```bash
+ng serve
+```
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Then, open your browser and navigate to \`http://localhost:4200/\`.
 
-## Running end-to-end tests
+## Usage
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+1. **Adding a New Link:**
+   - Click on the "Add New Account" button.
+   - Enter the social media name, URL, and description.
+   - Click "Save" to add the link to the list.
 
-## Further help
+2. **Editing a Link:**
+   - Click on the "Edit" button next to the link you want to modify.
+   - Update the name, URL, or description as needed.
+   - Click "Save" to apply the changes.
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+3. **Deleting a Link:**
+   - Click on the "Delete" button next to the link you want to remove.
+   - Confirm the deletion.
+
+4. **Searching and Filtering:**
+   - Use the search bar at the top of the list to filter links by name or description.
+
+5. **Pagination:**
+   - Navigate through the pages to view all the links.
+
+## Technologies Used
+
+- **Angular**: Front-end framework
+- **TypeScript**: Programming language
+- **Tailwindcss**: CSS framework for responsive design
+- **RxJS**: Reactive extensions for handling asynchronous operations
+
+## License
+
+This project is licensed under the MIT License.
