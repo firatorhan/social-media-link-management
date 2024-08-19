@@ -4,11 +4,13 @@ import { CommonModule } from '@angular/common';
 import { DataService } from '../../shared/services/data.service';
 import { HighlightDirective } from '../../shared/directives/highlight.directive';
 import { UppercasePipe } from '../../shared/pipes/uppercase.pipe';
+import { NgxPaginationModule } from 'ngx-pagination';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-list-link',
   standalone: true,
-  imports: [CommonModule, HighlightDirective, UppercasePipe],
+  imports: [CommonModule, HighlightDirective, UppercasePipe, NgxPaginationModule, FormsModule],
   templateUrl: './list-link.component.html',
   styleUrl: './list-link.component.scss',
 })
@@ -16,6 +18,8 @@ export class ListLinkComponent implements OnInit {
   listItems: ILinkItem[] = [];
   defaultUrl = true;
   defaultName = true;
+  currentPage = 1;
+  itemsPerPage = 4
 
   @Output() editLinkEmitter: EventEmitter<ILinkItem> =
     new EventEmitter<ILinkItem>();
